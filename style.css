@@ -1,0 +1,1681 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #633a4a;
+
+    background: #fff0f5;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --pink: #ed5b8a;
+
+    --pink-light: #ffb7cf;
+
+    --pink-soft: #ffe4ed;
+
+    --pink-dark: #c93668;
+
+    --pink-deep: #9d3155;
+
+    --text: #633a4a;
+
+    --muted: #a06f81;
+
+    --white: #ffffff;
+
+}
+
+
+/* =====================================================
+   BACKGROUND LOVE
+===================================================== */
+
+#hearts-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+#sparkles-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+.floating-heart {
+
+    position: absolute;
+
+    bottom: -70px;
+
+    opacity: 0;
+
+    color: #ff5f91;
+
+    text-shadow:
+        0 0 8px rgba(255, 92, 145, .55),
+        0 0 18px rgba(255, 92, 145, .25);
+
+    animation: floatHeart linear forwards;
+
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0deg)
+            scale(.5);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: .8;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-55vh)
+            translateX(30px)
+            rotate(20deg)
+            scale(1);
+
+        opacity: .7;
+
+    }
+
+    80% {
+
+        opacity: .45;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            translateX(-30px)
+            rotate(360deg)
+            scale(1.25);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.floating-sparkle {
+
+    position: absolute;
+
+    top: -30px;
+
+    color: white;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 8px #fff,
+        0 0 15px #ff8fb2;
+
+    animation: sparkleFall linear forwards;
+
+}
+
+
+@keyframes sparkleFall {
+
+    0% {
+
+        transform:
+            translateY(-30px)
+            rotate(0);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: .9;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   MUSIC BUTTON
+===================================================== */
+
+.music-button {
+
+    position: fixed;
+
+    right: 15px;
+
+    bottom: 15px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(220, 57, 105, .9);
+
+    color: white;
+
+    font-size: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 1000;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(170, 40, 80, .25);
+
+}
+
+
+.music-button.playing {
+
+    animation: musicPulse 1.3s infinite;
+
+}
+
+
+@keyframes musicPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0 rgba(237, 91, 138, .5);
+
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 12px rgba(237, 91, 138, 0);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0 rgba(237, 91, 138, 0);
+
+    }
+
+}
+
+
+/* =====================================================
+   OPENING
+===================================================== */
+
+.opening-screen {
+
+    width: 100%;
+
+    height: 100svh;
+
+    min-height: 650px;
+
+    position: relative;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.3) 20%,
+            transparent 42%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            #ffb8d0,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            #ffc8da,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #fff0f6,
+            #ffd0df,
+            #ffb9d0
+        );
+
+}
+
+
+.opening-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.3);
+
+    filter: blur(50px);
+
+    top: -100px;
+
+    right: -70px;
+
+}
+
+
+.opening-content {
+
+    width: 90%;
+
+    max-width: 430px;
+
+    position: relative;
+
+    z-index: 5;
+
+    animation: openingAppear 1.3s ease;
+
+}
+
+
+@keyframes openingAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.opening-heart {
+
+    font-size: 48px;
+
+    color: var(--pink);
+
+    animation: heartbeat 1.5s infinite;
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.18);
+
+    }
+
+}
+
+
+.opening-small {
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: var(--muted);
+
+}
+
+
+.opening-title {
+
+    margin-top: 22px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: clamp(65px, 19vw, 100px);
+
+    line-height: .78;
+
+    font-weight: 600;
+
+    color: var(--pink-dark);
+
+}
+
+
+.opening-name {
+
+    margin-top: 28px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 55px;
+
+    color: var(--pink-deep);
+
+}
+
+
+.opening-line {
+
+    width: 65px;
+
+    height: 2px;
+
+    margin: 20px auto;
+
+    background: var(--pink);
+
+}
+
+
+.from-label {
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--muted);
+
+}
+
+
+.from-name {
+
+    margin-top: 4px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 32px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.main-button {
+
+    border: none;
+
+    padding: 15px 28px;
+
+    margin-top: 27px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2749d,
+            #d63d6c
+        );
+
+    color: white;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 12px 30px rgba(202, 52, 100, .28);
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.main-button:active {
+
+    transform: scale(.93);
+
+}
+
+
+.main-button span {
+
+    margin-right: 7px;
+
+}
+
+
+.opening-hint {
+
+    margin-top: 20px;
+
+    font-size: 10px;
+
+    color: #b9788c;
+
+    animation: hintBlink 2s infinite;
+
+}
+
+
+@keyframes hintBlink {
+
+    0%,
+    100% {
+
+        opacity: .3;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main-content {
+
+    display: none;
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,255,255,.9),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #fff0f5,
+            #ffe4ed,
+            #fff5f8
+        );
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.story-section {
+
+    width: 100%;
+
+    min-height: 100svh;
+
+    padding:
+        80px
+        22px
+        70px;
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.section-number {
+
+    position: absolute;
+
+    top: 28px;
+
+    left: 22px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #c795a7;
+
+}
+
+
+.eyebrow {
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    color: #b8788d;
+
+}
+
+
+.story-title {
+
+    margin-top: 20px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 70px;
+
+    line-height: .9;
+
+    color: var(--pink-dark);
+
+}
+
+
+.story-name {
+
+    margin-top: 16px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 50px;
+
+    color: var(--pink-deep);
+
+}
+
+
+.heart-divider {
+
+    margin: 25px 0;
+
+    color: var(--pink);
+
+    font-size: 20px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.story-text {
+
+    max-width: 380px;
+
+    margin-top: 13px;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: var(--text);
+
+}
+
+
+.scroll-arrow {
+
+    margin-top: 45px;
+
+    font-size: 25px;
+
+    color: var(--pink);
+
+    animation: arrowMove 1.5s infinite;
+
+}
+
+
+@keyframes arrowMove {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(9px);
+
+    }
+
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.photo-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe5ee,
+            #fff1f5
+        );
+
+}
+
+
+.section-title {
+
+    margin-top: 14px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 46px;
+
+    line-height: 1;
+
+    color: var(--pink-dark);
+
+}
+
+
+.main-photo-card {
+
+    width: 92%;
+
+    max-width: 390px;
+
+    margin-top: 35px;
+
+}
+
+
+.photo-frame {
+
+    width: 100%;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(120, 40, 70, .16);
+
+    transform: rotate(-2deg);
+
+    overflow: hidden;
+
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 70vh;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 14px;
+
+}
+
+
+.photo-caption {
+
+    margin-top: 25px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 25px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.photo-caption span {
+
+    margin: 0 5px;
+
+}
+
+
+.photo-description {
+
+    max-width: 350px;
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message-section {
+
+    background: #fff8fa;
+
+}
+
+
+.message-card {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin-top: 35px;
+
+    padding: 28px 22px;
+
+    border-radius: 24px;
+
+    text-align: left;
+
+    background: rgba(255,255,255,.9);
+
+    border:
+        1px solid rgba(240,130,160,.15);
+
+    box-shadow:
+        0 15px 45px rgba(130,50,80,.08);
+
+}
+
+
+.message-card p {
+
+    margin-bottom: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+.message-opening {
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 28px !important;
+
+    color: var(--pink-dark);
+
+}
+
+
+.highlight-text {
+
+    color: #b93663;
+
+    font-weight: 500;
+
+}
+
+
+.signature {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    margin-top: 20px;
+
+    text-align: right;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 30px;
+
+    color: var(--pink-dark);
+
+}
+
+
+/* =====================================================
+   MEMORY
+===================================================== */
+
+.memories-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff0f5,
+            #ffe0eb
+        );
+
+}
+
+
+.memory-grid {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+.memory-card {
+
+    padding: 7px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.95);
+
+    box-shadow:
+        0 12px 30px rgba(120,40,70,.12);
+
+    overflow: hidden;
+
+}
+
+
+.memory-card img {
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 120px;
+
+    max-height: 280px;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border-radius: 11px;
+
+    background: white;
+
+}
+
+
+.memory-large {
+
+    grid-column: span 2;
+
+}
+
+
+.memory-text {
+
+    max-width: 360px;
+
+    margin-top: 30px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+.letter-section {
+
+    background: #fff6f9;
+
+}
+
+
+.envelope-container {
+
+    width: 180px;
+
+    height: 140px;
+
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.envelope {
+
+    width: 150px;
+
+    height: 105px;
+
+    position: relative;
+
+    border-radius: 8px;
+
+    background: #e15c84;
+
+    box-shadow:
+        0 20px 40px rgba(180,50,90,.2);
+
+    animation:
+        envelopeFloat 2s infinite ease-in-out;
+
+}
+
+
+.envelope::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 75px solid transparent;
+
+    border-right: 75px solid transparent;
+
+    border-top: 58px solid #ffabc4;
+
+    z-index: 2;
+
+}
+
+
+.envelope::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 75px solid #d9507b;
+
+    border-right: 75px solid #d9507b;
+
+    border-top: 50px solid transparent;
+
+}
+
+
+.envelope-heart {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 30px;
+
+}
+
+
+@keyframes envelopeFloat {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+
+.letter-intro {
+
+    max-width: 330px;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final-section {
+
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #ffd4e2,
+            #ffb9cf
+        );
+
+}
+
+
+.final-hearts {
+
+    margin-bottom: 20px;
+
+    color: #d94c77;
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+}
+
+
+.final-title {
+
+    margin-top: 25px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 65px;
+
+    line-height: .85;
+
+    color: #c93668;
+
+}
+
+
+.final-name {
+
+    margin-top: 16px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 52px;
+
+    color: #8f3151;
+
+}
+
+
+.final-divider {
+
+    margin: 25px;
+
+    color: #d94b76;
+
+}
+
+
+.final-message {
+
+    max-width: 340px;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    color: #704456;
+
+}
+
+
+.final-love {
+
+    margin-top: 35px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 44px;
+
+    color: #c82e64;
+
+}
+
+
+.final-from {
+
+    margin-top: 5px;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 28px;
+
+    color: #91415c;
+
+}
+
+
+.final-heart {
+
+    margin-top: 45px;
+
+    color: #d9366d;
+
+    font-size: 58px;
+
+    animation: heartbeat 1.5s infinite;
+
+}
+
+
+.end-text {
+
+    margin-top: 30px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #aa667d;
+
+}
+
+
+/* =====================================================
+   LETTER MODAL
+===================================================== */
+
+.letter-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 18px;
+
+    background: rgba(72,25,42,.65);
+
+    backdrop-filter: blur(7px);
+
+}
+
+
+.letter-paper {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    padding: 35px 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfd,
+            #fff0f5
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
+    animation: letterOpen .45s ease;
+
+}
+
+
+@keyframes letterOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.92);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.close-letter {
+
+    position: absolute;
+
+    top: 8px;
+
+    right: 12px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 30px;
+
+    color: #b95a77;
+
+}
+
+
+.letter-top {
+
+    text-align: center;
+
+    color: var(--pink);
+
+    font-size: 30px;
+
+}
+
+
+.letter-small {
+
+    margin-top: 8px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #ad7689;
+
+}
+
+
+.letter-paper h2 {
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 40px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.letter-content {
+
+    margin-top: 25px;
+
+}
+
+
+.letter-content p {
+
+    margin-bottom: 17px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    text-align: left;
+
+}
+
+
+.letter-content .center-text {
+
+    text-align: center;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 28px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.letter-content h3 {
+
+    margin: 25px 0;
+
+    text-align: center;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 34px;
+
+    color: var(--pink-dark);
+
+}
+
+
+.letter-signature {
+
+    margin-top: 25px;
+
+    text-align: right;
+
+    font-family: 'Dancing Script', cursive;
+
+    font-size: 22px;
+
+    color: #9b4864;
+
+}
+
+
+.letter-signature strong {
+
+    display: block;
+
+    font-size: 29px;
+
+    color: var(--pink-dark);
+
+}
+
+
+/* =====================================================
+   TABLET / DESKTOP
+===================================================== */
+
+@media (min-width: 700px) {
+
+    body {
+
+        background: #ead9df;
+
+    }
+
+
+    .opening-screen,
+    .main-content {
+
+        max-width: 500px;
+
+        margin: auto;
+
+        box-shadow:
+            0 0 60px rgba(70,20,40,.15);
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 350px) {
+
+    .opening-title {
+
+        font-size: 60px;
+
+    }
+
+
+    .opening-name {
+
+        font-size: 45px;
+
+    }
+
+
+    .story-title {
+
+        font-size: 60px;
+
+    }
+
+
+    .story-name {
+
+        font-size: 42px;
+
+    }
+
+
+    .section-title {
+
+        font-size: 40px;
+
+    }
+
+
+    .message-card {
+
+        padding: 22px 18px;
+
+    }
+
+}

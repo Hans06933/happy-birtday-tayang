@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffc5d8"
+    >
+
+    <meta
+        name="description"
+        content="Happy Birthday Tayang ❤️"
+    >
+
+    <title>Happy Birthday Tayang ❤️</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     BACKGROUND LOVE
+===================================================== -->
+
+<div
+    id="hearts-container"
+    aria-hidden="true"
+></div>
+
+
+<div
+    id="sparkles-container"
+    aria-hidden="true"
+></div>
+
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="assets/musik.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<!-- =====================================================
+     MUSIC BUTTON
+===================================================== -->
+
+<button
+    class="music-button"
+    id="musicButton"
+    onclick="toggleMusic()"
+    aria-label="Kontrol musik"
+>
+
+    🔇
+
+</button>
+
+
+<!-- =====================================================
+     OPENING SCREEN
+===================================================== -->
+
+<section
+    class="opening-screen"
+    id="openingScreen"
+>
+
+
+    <div class="opening-glow"></div>
+
+
+    <div class="opening-content">
+
+
+        <div class="opening-heart">
+
+            ♥
+            
+        </div>
+
+
+        <p class="opening-small">
+
+            Ada sesuatu untuk kamu...
+
+        </p>
+
+
+        <h1 class="opening-title">
+
+            Happy
+            <br>
+            Birthday
+
+        </h1>
+
+
+        <h2 class="opening-name">
+
+            Tayang ❤️
+
+        </h2>
+
+
+        <div class="opening-line"></div>
+
+
+        <p class="from-label">
+
+            A little birthday surprise from
+
+        </p>
+
+
+        <p class="from-name">
+
+            Farhan
+
+        </p>
+
+
+        <button
+            class="main-button"
+            onclick="startExperience()"
+        >
+
+            <span>💌</span>
+
+            Buka Hadiah
+
+        </button>
+
+
+        <p class="opening-hint">
+
+            tap untuk membuka ♡
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<main
+    class="main-content"
+    id="mainContent"
+>
+
+
+    <!-- =================================================
+         SECTION 01
+    ================================================= -->
+
+    <section
+        class="story-section hero-section"
+    >
+
+
+        <span class="section-number">
+            01
+        </span>
+
+
+        <p class="eyebrow">
+
+            For my favorite person
+
+        </p>
+
+
+        <h2 class="story-title">
+
+            Happy Birthday
+
+        </h2>
+
+
+        <h3 class="story-name">
+
+            Tayang ❤️
+
+        </h3>
+
+
+        <div class="heart-divider">
+
+            ♥ ♡ ♥
+
+        </div>
+
+
+        <p class="story-text">
+
+            Hari ini bukan hanya tentang
+            bertambahnya usia seseorang.
+
+        </p>
+
+
+        <p class="story-text">
+
+            Tapi tentang hari ketika seseorang
+            yang sangat berarti dalam hidupku
+            dilahirkan.
+
+        </p>
+
+
+        <p class="story-text">
+
+            Dan aku bersyukur bisa mengenalmu.
+
+        </p>
+
+
+        <div class="scroll-arrow">
+
+            ↓
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECTION 02 FOTO UTAMA
+    ================================================= -->
+
+    <section
+        class="story-section photo-section"
+    >
+
+
+        <span class="section-number">
+            02
+        </span>
+
+
+        <p class="eyebrow">
+
+            Someone special
+
+        </p>
+
+
+        <h2 class="section-title">
+
+            You are beautiful
+
+        </h2>
+
+
+        <div class="main-photo-card">
+
+
+            <div class="photo-frame">
+
+
+                <img
+                    src="assets/foto1.jpg"
+                    alt="Foto Tayang"
+                >
+
+
+            </div>
+
+
+            <div class="photo-caption">
+
+                <span>♡</span>
+
+                My favorite person
+
+                <span>♡</span>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="photo-description">
+
+            Entah sudah berapa kali aku melihat
+            foto ini, tapi rasanya tetap saja
+            senyum ketika melihatmu.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECTION 03 PESAN
+    ================================================= -->
+
+    <section
+        class="story-section message-section"
+    >
+
+
+        <span class="section-number">
+            03
+        </span>
+
+
+        <p class="eyebrow">
+
+            A little message
+
+        </p>
+
+
+        <h2 class="section-title">
+
+            Untuk Tayang ❤️
+
+        </h2>
+
+
+        <div class="message-card">
+
+
+            <p class="message-opening">
+
+                Selamat ulang tahun, Tayang.
+
+            </p>
+
+
+            <p>
+
+                Semoga di umur yang baru ini,
+                semua hal baik datang kepadamu.
+
+            </p>
+
+
+            <p>
+
+                Semoga langkahmu selalu
+                dimudahkan, impianmu satu per satu
+                menjadi kenyataan, dan senyummu
+                tidak pernah hilang.
+
+            </p>
+
+
+            <p>
+
+                Terima kasih karena sudah hadir
+                dan menjadi bagian dari cerita
+                hidupku.
+
+            </p>
+
+
+            <p>
+
+                Terima kasih untuk setiap tawa,
+                perhatian, cerita, dan waktu
+                yang sudah kita lewati bersama.
+
+            </p>
+
+
+            <p class="highlight-text">
+
+                Aku mungkin tidak sempurna,
+                tapi aku akan selalu berusaha
+                memberikan yang terbaik untukmu.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="signature">
+
+            — Farhan ❤️
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECTION 04 MEMORY
+    ================================================= -->
+
+    <section
+        class="story-section memories-section"
+    >
+
+
+        <span class="section-number">
+            04
+        </span>
+
+
+        <p class="eyebrow">
+
+            Our little memories
+
+        </p>
+
+
+        <h2 class="section-title">
+
+            Some moments 📸
+
+        </h2>
+
+
+        <div class="memory-grid">
+
+
+            <div class="memory-card memory-large">
+
+                <img
+                    src="assets/foto1.jpg"
+                    alt="Memory pertama"
+                >
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <img
+                    src="assets/foto2.jpg"
+                    alt="Memory kedua"
+                >
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <img
+                    src="assets/foto3.jpg"
+                    alt="Memory ketiga"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <p class="memory-text">
+
+            Semoga akan ada lebih banyak
+            cerita yang bisa kita simpan
+            bersama. ❤️
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECTION 05 SURAT
+    ================================================= -->
+
+    <section
+        class="story-section letter-section"
+    >
+
+
+        <span class="section-number">
+            05
+        </span>
+
+
+        <p class="eyebrow">
+
+            One last thing...
+
+        </p>
+
+
+        <div class="envelope-container">
+
+
+            <div class="envelope">
+
+
+                <div class="envelope-flap"></div>
+
+
+                <div class="envelope-heart">
+
+                    ♥
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            Ada surat untukmu
+
+        </h2>
+
+
+        <p class="letter-intro">
+
+            Aku punya sedikit sesuatu
+            yang ingin aku sampaikan.
+
+        </p>
+
+
+        <button
+            class="main-button"
+            onclick="openLetter()"
+        >
+
+            💌 Buka Surat
+
+        </button>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SECTION 06 FINAL
+    ================================================= -->
+
+    <section
+        class="story-section final-section"
+    >
+
+
+        <div class="final-hearts">
+
+            ♥　♥　♥
+
+        </div>
+
+
+        <p class="eyebrow">
+
+            Always remember this
+
+        </p>
+
+
+        <h2 class="final-title">
+
+            Happy Birthday
+
+        </h2>
+
+
+        <h3 class="final-name">
+
+            Tayang ❤️
+
+        </h3>
+
+
+        <div class="final-divider">
+
+            ✦
+
+        </div>
+
+
+        <p class="final-message">
+
+            Semoga hari ini menjadi awal
+            dari banyak kebahagiaan
+            yang akan datang kepadamu.
+
+        </p>
+
+
+        <p class="final-message">
+
+            Semoga kamu selalu dikelilingi
+            orang-orang yang menyayangimu.
+
+        </p>
+
+
+        <p class="final-love">
+
+            I Love You ❤️
+
+        </p>
+
+
+        <p class="final-from">
+
+            — Farhan
+
+        </p>
+
+
+        <div class="final-heart">
+
+            ♥
+
+        </div>
+
+
+        <p class="end-text">
+
+            Made with love for Tayang
+
+        </p>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     LETTER MODAL
+===================================================== -->
+
+<div
+    class="letter-modal"
+    id="letterModal"
+>
+
+
+    <div class="letter-paper">
+
+
+        <button
+            class="close-letter"
+            onclick="closeLetter()"
+        >
+
+            ×
+
+        </button>
+
+
+        <div class="letter-top">
+
+            ♥
+
+        </div>
+
+
+        <p class="letter-small">
+
+            A letter for you
+
+        </p>
+
+
+        <h2>
+
+            Dear Tayang ❤️
+
+        </h2>
+
+
+        <div class="letter-content">
+
+
+            <p>
+
+                Selamat bertambah umur ya tayangku aku
+                selalu ada disamping kamu support kamu
+                semoga di umur kamu ke-21 ini makin semangat
+                rajin ibadahnya, tambah sayang sama orang tahu
+                dilancarkan segala urusannya dan dimudahkan rezekinya
+                pokonya wish u all the best
+
+            </p>
+
+
+            <p class="center-text">
+
+                Kamu tidak sendirian. ❤️
+
+            </p>
+
+
+            <p>
+
+                Akan selalu ada seseorang yang
+                mendoakanmu, mendukungmu,
+                dan berharap kamu selalu bahagia.
+
+            </p>
+
+
+            <p>
+
+                Aku tidak tahu seperti apa perjalanan
+                kita ke depannya.
+
+            </p>
+
+
+            <p>
+
+                Tapi aku bersyukur karena hari ini
+                aku bisa mengenal seseorang
+                seistimewa kamu.
+
+            </p>
+
+
+            <p>
+
+                Jadi di hari ulang tahunmu ini,
+                aku cuma ingin mengatakan:
+
+            </p>
+
+
+            <h3>
+
+                Happy Birthday,
+                Tayang ❤️
+
+            </h3>
+
+
+            <p>
+
+                Tetaplah tersenyum.
+                Tetaplah menjadi dirimu sendiri.
+                Dan jangan pernah lupa bahwa
+                kamu sangat berarti.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="letter-signature">
+
+            With love,
+
+            <strong>
+
+                Farhan ❤️
+
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     SCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
